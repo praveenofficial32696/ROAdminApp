@@ -324,22 +324,6 @@ const Auth = ({ showAlert }: {
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-3 md:space-y-4 overflow-hidden"
               >
-                <div className="flex gap-2 p-1 bg-gray-50 rounded-full mb-2">
-                  <button
-                    type="button"
-                    onClick={() => setRole('admin')}
-                    className={`flex-1 py-2 rounded-full text-xs font-bold transition-all ${role === 'admin' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-500 hover:text-gray-700'}`}
-                  >
-                    Admin
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setRole('customer')}
-                    className={`flex-1 py-2 rounded-full text-xs font-bold transition-all ${role === 'customer' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-500 hover:text-gray-700'}`}
-                  >
-                    Customer
-                  </button>
-                </div>
                 <input
                   type="text"
                   placeholder="Full Name"
@@ -356,16 +340,6 @@ const Auth = ({ showAlert }: {
                   className="w-full px-5 md:px-6 py-3 md:py-4 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all text-sm md:text-base"
                   required={!isLogin}
                 />
-                {role === 'customer' && (
-                  <input
-                    type="text"
-                    placeholder="Address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    className="w-full px-5 md:px-6 py-3 md:py-4 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all text-sm md:text-base"
-                    required={!isLogin && role === 'customer'}
-                  />
-                )}
               </motion.div>
             )}
           </AnimatePresence>
